@@ -22,12 +22,13 @@ function App() {
         let arr=[];
         let keys=Object.keys(data);
         for(let i=0;i<keys.length;i++){
-          if(!arr.includes(data[keys[i]].currencyName)){
+          if(!arr.includes(data[keys[i]].currencyName+` (${data[keys[i]].currencyId})`)){
             arr.push(data[keys[i]].currencyName+` (${data[keys[i]].currencyId})`);
           }
          
 
         }
+        arr.sort();
         setcountries(arr);
         //console.log(arr);
 
@@ -97,7 +98,7 @@ function App() {
         </div>
         
         {
-          rate!=null && <h2>{amount*rate}</h2>
+          rate!=null && <h2>{(amount*rate).toFixed(2)}</h2>
         }
         
       </div>
