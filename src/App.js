@@ -40,6 +40,13 @@ function App() {
       }
     }, [])
 
+    useEffect(() => {
+      convert();
+      return () => {
+        
+      }
+    }, [from,to])
+
     function changefrom(e){
       
       console.log(e.target.value);
@@ -85,7 +92,8 @@ function App() {
           <input type="number"  value={amount} onChange={(e)=>setamount(e.target.value)} class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"/>
         </div>
          <Select data={countries} handleChange={changeto} des="To" value={to}/>
-         <button class="btn btn-primary" onClick={convert}>{converting?"Converting...":"Convert"}</button>
+         
+          <h2>{converting && "Converting"}</h2>
         </div>
         
         {
