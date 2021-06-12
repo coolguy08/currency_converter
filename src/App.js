@@ -43,10 +43,12 @@ function App() {
     function changefrom(e){
       
       console.log(e.target.value);
+      setrate(null);
       setfrom(e.target.value)
     }
 
     function changeto(e){
+      setrate(null);
      setto(e.target.value)
     }
 
