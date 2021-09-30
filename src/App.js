@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react"
 import Select from "./Select";
+import Loading from "./loading.svg";
 
 
 const countries_url="https://g-currency-converter.herokuapp.com/countries";
@@ -25,8 +26,6 @@ function App() {
           if(!arr.includes(data[keys[i]].currencyName+` (${data[keys[i]].currencyId})`)){
             arr.push(data[keys[i]].currencyName+` (${data[keys[i]].currencyId})`);
           }
-         
-
         }
         arr.sort();
         setcountries(arr);
@@ -62,8 +61,8 @@ function App() {
 
     if(loading){
       return <div class="loading">
-        <h1>Loading...</h1>
-       
+        {/* <h1>Loading...</h1>  */}
+        <img src={Loading} alt="Loading"></img>
       </div>
     }
 
@@ -78,8 +77,6 @@ function App() {
 
        
      }
-
-
 
   return (
     <div className="container">
