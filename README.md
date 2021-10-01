@@ -8,6 +8,7 @@
 
 ## `Features`
 - Live Data
+- G-Currency API
 
 ## `Usage`
 - Clone This Repo
