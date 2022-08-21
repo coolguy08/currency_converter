@@ -45,7 +45,7 @@ function App() {
       return () => {
         
       }
-    }, [from,to])
+    }, [from,to,convert])
 
     function changefrom(e){
       
