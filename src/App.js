@@ -41,11 +41,23 @@ function App() {
     }, [])
 
     useEffect(() => {
+      
+       const convert=async()=>{
+       setconverting(true);
+       console.log(from,to);
+         const res=await fetch(base+`getrates?from=${from}&to=${to}`);
+         const data=await res.json();
+         setrate(data.rate)
+         //console.log(data);
+         setconverting(false);
+
+       
+      }
       convert();
       return () => {
         
       }
-    }, [from,to,convert])
+    }, [from,to])
 
     function changefrom(e){
       
@@ -66,17 +78,7 @@ function App() {
       </div>
     }
 
-    const convert=async()=>{
-       setconverting(true);
-       console.log(from,to);
-         const res=await fetch(base+`getrates?from=${from}&to=${to}`);
-         const data=await res.json();
-         setrate(data.rate)
-         //console.log(data);
-         setconverting(false);
-
-       
-     }
+   
 
   return (
     <div className="container">
