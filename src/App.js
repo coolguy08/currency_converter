@@ -66,7 +66,7 @@ function App() {
       </div>
     }
 
-     async function convert=()=>{
+    const convert=async()=>{
        setconverting(true);
        console.log(from,to);
          const res=await fetch(base+`getrates?from=${from}&to=${to}`);
