@@ -18,19 +18,12 @@
 
 
 
+# Docker Image Build & Run
 
+## `Docker Image Build`
+```docker build -t currency-converter .```
 
+## `Docker Run`
+```docker run -p 5000:5000 currency-converter```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+- open in browser ```localhost:5000```
